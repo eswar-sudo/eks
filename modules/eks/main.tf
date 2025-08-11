@@ -8,13 +8,13 @@ resource "aws_eks_cluster" "this" {
     subnet_ids = var.subnet_ids
   }
 
-  tags = var.tags
-}
-
 access_config {
     authentication_mode                         = "API_AND_CONFIG_MAP"
     bootstrap_cluster_creator_admin_permissions = true
   }
+
+tags = var.tags
+}
 
 resource "aws_iam_role" "eks_cluster_role" {
   name = "${var.cluster_name}-cluster-role"
