@@ -1,7 +1,7 @@
 region           = "us-east-1"
 cluster_name     = "eks-tf-spacelift"
-vpc_id           = "vpc-0d5049bd537fbff24"
-subnet_ids       = ["subnet-00f0e58853171ece1", "subnet-0e36df68ef499b30e"]
+vpc_id           = "vpc-0ed88e845dcbe6ffe"
+subnet_ids       = ["subnet-00bf41267dfe27175", "subnet-07aa194fa882f27c6"]
 cluster_version  = "1.33"
 node_group_name  = "system-ng"
 desired_size     = 1
