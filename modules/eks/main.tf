@@ -88,3 +88,21 @@ resource "aws_iam_role_policy_attachment" "eks_node_policy" {
   role       = aws_iam_role.eks_node_role.name
   policy_arn = each.value
 }
+
+
+# Fetch EKS cluster details to get the cluster SG ID
+data "aws_eks_cluster" "this" {
+  name = aws_eks_cluster.this.name
+}
+
+# Add ingress rule for TCP 443 to cluster SG
+resource "aws_security_group_rule" "eks_cluster_ingress_443" {
+  type              = "ingress"
+  from_port         = 443
+  to_port           = 443
+  protocol          = "tcp"
+  security_group_id = data.aws_eks_cluster.this.vpc_config[0].cluster_security_group_id
+  cidr_blocks       = ["0.0.0.0/0"] # Change to internal CIDR if needed
+
+  depends_on = [aws_eks_cluster.this]
+}
