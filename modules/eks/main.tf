@@ -17,6 +17,21 @@ access_config {
 
 tags = var.tags
 }
+resource "aws_eks_access_entry" "admin" {
+  cluster_name  = aws_eks_cluster.this.name
+  principal_arn = "arn:aws:iam::575958559853:role/Ssmmanagedt"
+  type          = "STANDARD"
+}
+
+resource "aws_eks_access_policy_association" "root_admin" {
+  cluster_name  = aws_eks_cluster.this.name
+  principal_arn = aws_eks_access_entry.admin.principal_arn
+  policy_arn    = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSAdminPolicy"
+
+ access_scope {
+    type = "cluster"
+  }
+}
 
 resource "aws_eks_access_entry" "root" {
   cluster_name  = aws_eks_cluster.this.name
