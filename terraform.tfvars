@@ -1,7 +1,7 @@
 region           = "us-east-1"
 cluster_name     = "spacelift-karpenter"
-vpc_id           = "vpc-004fa900356226ee0"
-subnet_ids       = ["subnet-08246170270c3c8b5", "subnet-09e81bc8b93dad8c2"]
+vpc_id           = vpc-04f8fda9d23e6309f"
+subnet_ids       = ["subnet-0dfe3bdfa325e620d", "subnet-0a57162c47c4e2b82"]
 cluster_version  = "1.33"
 node_group_name  = "system-ng"
 disk_size        = 30
