@@ -18,6 +18,6 @@ resource "aws_eks_node_group" "this" {
   tags           = var.tags
 
   lifecycle {
-    ignore_changes = all
+    create_before_destroy = true
   }
 }
