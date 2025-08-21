@@ -7,7 +7,7 @@ module "eks" {
   cluster_name    = var.cluster_name
   region          = var.region
   vpc_id          = var.vpc_id
-  subnet_ids      = var.subnet_ids
+  subnet_ids      = var.private_subnet_ids
   cluster_version = var.cluster_version
   tags            = var.tags
   vpc_cni_version = var.vpc_cni_version
@@ -18,7 +18,7 @@ module "eks" {
 module "nodegroup" {
   source           = "./modules/nodegroup"
   cluster_name     = module.eks.cluster_name
-  subnet_ids       = var.subnet_ids
+  subnet_ids       = var.private_subnet_ids
   node_group_name  = var.node_group_name
   node_role_arn    = module.eks.node_role_arn
   desired_size     = var.desired_size
