@@ -22,6 +22,7 @@ module "nodegroup" {
   node_group_name  = var.node_group_name
   node_role_arn    = module.eks.node_role_arn
   desired_size     = var.desired_size
+  disk_size        = var.disk_size
   min_size         = var.min_size
   max_size         = var.max_size
   instance_types   = var.instance_types
