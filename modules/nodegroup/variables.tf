@@ -10,3 +10,4 @@ variable "capacity_type" { type = string }
 variable "ami_type" { type = string }
 variable "labels" { type = map(string) }
 variable "tags" { type = map(string) }
+variable "disk_size" { type = number }
