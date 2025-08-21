@@ -19,7 +19,7 @@ variable "disk_size" {
   type        = number
 }
 
-variable "subnet_ids" {
+variable "private_subnet_ids" {
   description = "A list of subnet IDs (private or public) to launch the EKS cluster and node groups."
   type        = list(string)
 }
