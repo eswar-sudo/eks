@@ -4,6 +4,7 @@ vpc_id           = "vpc-004fa900356226ee0"
 subnet_ids       = ["subnet-08246170270c3c8b5", "subnet-09e81bc8b93dad8c2"]
 cluster_version  = "1.33"
 node_group_name  = "system-ng"
+disk_size        = 30
 desired_size     = 1
 min_size         = 1
 max_size         = 3
