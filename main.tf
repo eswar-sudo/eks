@@ -7,7 +7,7 @@ module "eks" {
   cluster_name    = var.cluster_name
   region          = var.region
   vpc_id          = var.vpc_id
-  subnet_ids      = var.private_subnet_ids
+  private_subnet_ids      = var.private_subnet_ids
   cluster_version = var.cluster_version
   tags            = var.tags
   vpc_cni_version = var.vpc_cni_version
