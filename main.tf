@@ -18,7 +18,7 @@ module "eks" {
 module "nodegroup" {
   source           = "./modules/nodegroup"
   cluster_name     = module.eks.cluster_name
-  subnet_ids       = var.private_subnet_ids
+  private_subnet_ids       = var.private_subnet_ids
   node_group_name  = var.node_group_name
   node_role_arn    = module.eks.node_role_arn
   desired_size     = var.desired_size
